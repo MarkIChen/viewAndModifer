@@ -10,7 +10,21 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        Button("Hello, World!") {
+            print(type(of: self.body))
+        }
+    .padding()
+//        .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.blue, lineWidth: 4))
+        
+            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.blue, lineWidth: 5))
+        
+//    .background(Color.red)
+//    .padding()
+//    .background(Color.blue)
+//    .padding()
+//    .background(Color.yellow)
+//
+            
     }
 }
 
