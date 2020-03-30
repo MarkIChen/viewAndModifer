@@ -8,23 +8,31 @@
 
 import SwiftUI
 
-struct PrimaryLabel: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .padding()
-            .background(Color.blue)
-            .foregroundColor(Color.white)
-            .font(.largeTitle)
+
+
+struct CapsuleText: View {
+    var text: String
+    
+    var body: some View {
+        Text(text)
+        .font(.largeTitle)
+        .padding()
+//        .foregroundColor(Color.red)
+        .background(Color.blue)
+        .clipShape(Capsule())
     }
 }
 
 struct ContentView: View {
     
-    
     var body: some View {
-        Text("Hello World")
-        .modifier(PrimaryLabel())
-      
+         VStack(spacing: 10) {
+            CapsuleText(text: "first")
+                .foregroundColor(.black)
+            CapsuleText(text: "second")
+                .foregroundColor(.red)
+         }.foregroundColor(.yellow)
+        
     }
 }
 
